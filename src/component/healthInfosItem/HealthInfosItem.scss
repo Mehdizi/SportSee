@@ -1,0 +1,48 @@
+@import "../../style/settings.scss";
+
+.health-infos-wrapper {
+  width: 194px;
+  height: 64px;
+  padding: 32px;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  .health-infos-svg-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+  }
+  .health-infos-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    h3 {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.red {
+  background-color: $redBackgroud;
+}
+
+.blue {
+  background-color: $blueBackgroud;
+}
+
+.yellow {
+  background-color: $yellowBackgroud;
+}
+.pink {
+  background-color: $pinkBackgroud;
+}
