@@ -2,7 +2,7 @@ import React from "react";
 import {
   HealthInfosItem,
   HealthInfosItemProps,
-} from "../healthInfosItem/HealthInfosItem";
+} from "./healthInfosItem/HealthInfosItem";
 import { useHealthInfosDatas } from "../../hooks/useHealthInfosDatas";
 import { Energy } from "../../assets/Energy";
 import { Protein } from "../../assets/Protein";

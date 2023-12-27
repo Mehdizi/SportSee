@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import {
-  StubUserHealthInfos,
-  USER_MAIN_DATA,
-  UserHealthInfos,
-} from "../stubDatas/stubHealthInfosDatas";
+import React, { useContext, useEffect, useState } from "react";
+
+import { UserContext } from "../context/userContext";
+import { UsecaseDependencies } from "../context/usecaseDependenciesProvider";
+import { UserHealthInfos } from "../gateways/stubHealthInfosDatas";
 
 export const useHealthInfosDatas = () => {
+  const { userHealthGateway } = useContext(UsecaseDependencies);
+  const { id } = useContext(UserContext);
   const [healthInfos, setHealthInfos] = useState<UserHealthInfos>({
     calorieCount: 0,
     proteinCount: 0,
@@ -15,9 +16,9 @@ export const useHealthInfosDatas = () => {
 
   useEffect(() => {
     const getUserHealthDatas = async () => {
-      const userHealthInfosGateway = new StubUserHealthInfos();
-      userHealthInfosGateway.feedWith(USER_MAIN_DATA[0].keyData);
-      setHealthInfos(await userHealthInfosGateway.load(18));
+      const data = await userHealthGateway.load(id);
+      console.log(data);
+      setHealthInfos(data);
     };
 
     getUserHealthDatas();
