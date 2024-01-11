@@ -1,14 +1,18 @@
 import React from "react";
 import { HealthInfos } from "./component/healthInfos/HealthInfos";
+import { AverageSessions } from "./component/averageSessions/AverageSessions";
+import { Presentation } from "./component/healthInfos/presentation/Presentation";
+import { Activity } from "./component/activity/Activity";
+import { Score } from "./component/score/Score";
 
 function App() {
   return (
     <main className="main-content-wrapper">
-      <div>Salutation</div>
-      <div>Activité quotidienne</div>
-      <div>Durées moyennes des sessions</div>
+      <Presentation />
+      <Activity />
+      <AverageSessions />
       <div>Radar Map</div>
-      <div>Score</div>
+      <Score />
       <HealthInfos />
     </main>
   );

@@ -7,7 +7,7 @@ import { useHealthInfosDatas } from "../../hooks/useHealthInfosDatas";
 import { Energy } from "../../assets/Energy";
 import { Protein } from "../../assets/Protein";
 import { Carbohydrate } from "../../assets/Carbohydrate";
-import { Fat } from "../../assets/Fat";
+import { Lipid } from "../../assets/Lipid";
 import "./HealthInfos.scss";
 
 export const HealthInfos = () => {
@@ -17,30 +17,30 @@ export const HealthInfos = () => {
     {
       name: "Calories",
       unit: "Kcal",
-      quantity: healthInfos.calorieCount,
+      quantity: healthInfos.macroCount.calorie,
       color: "red",
       Icon: <Energy />,
     },
     {
       name: "Protéine",
       unit: "g",
-      quantity: healthInfos.proteinCount,
+      quantity: healthInfos.macroCount.protein,
       color: "blue",
       Icon: <Protein />,
     },
     {
       name: "Glucides",
       unit: "g",
-      quantity: healthInfos.carbohydrateCount,
+      quantity: healthInfos.macroCount.carbohydrate,
       color: "yellow",
       Icon: <Carbohydrate />,
     },
     {
       name: "Lipides",
       unit: "g",
-      quantity: healthInfos.lipidCount,
+      quantity: healthInfos.macroCount.lipid,
       color: "pink",
-      Icon: <Fat />,
+      Icon: <Lipid />,
     },
   ];
 

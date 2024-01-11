@@ -1,0 +1,19 @@
+.presentation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000;
+    span {
+      color: #ff0101;
+    }
+  }
+  p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #000;
+  }
+}

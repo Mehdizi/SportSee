@@ -2,23 +2,31 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { UserContext } from "../context/userContext";
 import { UsecaseDependencies } from "../context/usecaseDependenciesProvider";
-import { UserHealthInfos } from "../gateways/stubHealthInfosDatas";
+import { MacroCount } from "../types/HealthInfos";
 
 export const useHealthInfosDatas = () => {
-  const { userHealthGateway } = useContext(UsecaseDependencies);
+  const { userMainDataGateway } = useContext(UsecaseDependencies);
   const { id } = useContext(UserContext);
-  const [healthInfos, setHealthInfos] = useState<UserHealthInfos>({
-    calorieCount: 0,
-    proteinCount: 0,
-    carbohydrateCount: 0,
-    lipidCount: 0,
+  const [healthInfos, setHealthInfos] = useState<MacroCount>({
+    macroCount: {
+      calorie: 0,
+      protein: 0,
+      carbohydrate: 0,
+      lipid: 0,
+    },
   });
 
   useEffect(() => {
     const getUserHealthDatas = async () => {
-      const data = await userHealthGateway.load(id);
-      console.log(data);
-      setHealthInfos(data);
+      const data = await userMainDataGateway.load(id);
+      setHealthInfos({
+        macroCount: {
+          calorie: data.macroCount.calorie,
+          protein: data.macroCount.protein,
+          carbohydrate: data.macroCount.carbohydrate,
+          lipid: data.macroCount.lipid,
+        },
+      });
     };
 
     getUserHealthDatas();

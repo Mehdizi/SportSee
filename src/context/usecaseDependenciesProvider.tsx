@@ -1,40 +1,50 @@
 import { PropsWithChildren, createContext } from "react";
+import { UserMainDataGateway } from "../gateways/UserMainData/UserMainDataGateway.types";
 import {
-  StubUserAverageSessions,
-  USER_AVERAGE_SESSIONS,
-  UserAverageSessionsGateway,
-} from "../gateways/stubAverageSessionsDatas";
-import {
-  StubUserHealthInfos,
-  USER_MAIN_DATA,
-  UserHealthGateway,
-} from "../gateways/stubHealthInfosDatas";
-// import { AxiosHealthInfosGateway } from "../gateways/axiosHealthInfos";
+  MOCKED_USER_ACTIVITY,
+  MOCKED_USER_AVERAGE_SESSIONS,
+  MOCKED_USER_MAIN_DATA,
+} from "../mockedDatas/mockedDatas";
+import { StubUserMainData } from "../gateways/UserMainData/StubUserMainData";
+import { UserAverageSessionsGateway } from "../gateways/AverageSessions/UserAverageSessions.types";
+// import { StubAverageSessions } from "../gateways/AverageSessions/StubAverageSessions";
+import { AxiosUserAverageSessions } from "../gateways/AverageSessions/AxiosAverageSessions";
+import { AxiosUserMainData } from "../gateways/UserMainData/AxiosUserMainData";
+import { StubAverageSessions } from "../gateways/AverageSessions/StubAverageSessions";
+import { UserActivityGateway } from "../gateways/Activity/UserActivity.types";
+import { AxiosActivity } from "../gateways/Activity/AxiosActivity";
+import { StubActivity } from "../gateways/Activity/StubActivity";
 
 type Dependencies = {
+  userMainDataGateway: UserMainDataGateway;
   userAverageSessionsGateway: UserAverageSessionsGateway;
-  userHealthGateway: UserHealthGateway;
+  userActivityGateway: UserActivityGateway;
 };
 
-const userAverageSessionsGateway = new StubUserAverageSessions();
-userAverageSessionsGateway.feedWith(USER_AVERAGE_SESSIONS[0].sessions);
+// const userMainDataGateway = new AxiosUserMainData();
+const userMainDataGateway = new StubUserMainData(MOCKED_USER_MAIN_DATA[0]);
 
-// const userHealthGateway = new AxiosHealthInfosGateway()
+// const userAverageSessionsGateway = new AxiosUserAverageSessions();
+const userAverageSessionsGateway = new StubAverageSessions(
+  MOCKED_USER_AVERAGE_SESSIONS
+);
 
-const userHealthGateway = new StubUserHealthInfos();
-userHealthGateway.feedWith(USER_MAIN_DATA[0].keyData);
+// const userActivityGateway = new AxiosActivity()
+const userActivityGateway = new StubActivity(MOCKED_USER_ACTIVITY);
 
-export const UsecaseDependencies = createContext<Dependencies>(null!);
+const dependencies: Dependencies = {
+  userMainDataGateway,
+  userAverageSessionsGateway,
+  userActivityGateway,
+};
+
+export const UsecaseDependencies = createContext<Dependencies>(dependencies);
 
 export const UsecaseDependenciesProvider = ({
   children,
 }: PropsWithChildren) => {
   return (
-    <UsecaseDependencies.Provider
-      value={{
-        userAverageSessionsGateway,
-        userHealthGateway,
-      }}>
+    <UsecaseDependencies.Provider value={dependencies}>
       {children}
     </UsecaseDependencies.Provider>
   );
