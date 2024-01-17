@@ -1,5 +1,13 @@
 .health-infos-items-list {
+  width: 194px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  grid-area: health;
+}
+
+@media screen and (max-width: 1300px) {
+  .health-infos-items-list {
+    width: 140px;
+  }
 }

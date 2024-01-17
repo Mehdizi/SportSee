@@ -6,13 +6,13 @@ import { UserContext } from "../context/userContext";
 export const useScore = () => {
   const { userMainDataGateway } = useContext(UsecaseDependencies);
   const { id } = useContext(UserContext);
-  const [scoreDatas, setScoreDatas] = useState<ScoreInfos>({ todayScore: 0 });
+  const [score, setScore] = useState<number>(0);
   useEffect(() => {
     const getScoreDatas = async () => {
-      const data = await userMainDataGateway.load(id);
-      setScoreDatas({ todayScore: data.todayScore });
+      const { todayScore } = await userMainDataGateway.load(id);
+      setScore(todayScore);
     };
     getScoreDatas();
   }, []);
-  return { scoreDatas };
+  return { score };
 };

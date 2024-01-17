@@ -1,0 +1,57 @@
+@import "../../style/settings.scss";
+
+.recharts-activity {
+  grid-area: activity;
+  background-color: $lightGrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.legend-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px;
+  h3 {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+}
+
+.parameters-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.parameter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #74798c;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.dark-red {
+  background-color: $red;
+}
+
+.dark-grey {
+  background-color: $darkGrey;
+}
+
+// @media screen and (max-width: 1300px) {
+//   .recharts-activity {
+//     height: 220px;
+//   }
+// }

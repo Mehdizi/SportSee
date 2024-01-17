@@ -1,10 +1,10 @@
 @import "../../../style/settings.scss";
 
 .health-infos-wrapper {
-  width: 194px;
+  width: 100%;
   height: 64px;
   padding: 32px;
-  background-color: #fbfbfb;
+  background-color: $lightGrey;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -45,4 +45,21 @@
 }
 .pink {
   background-color: $pinkBackgroud;
+}
+
+@media screen and (max-width: 1300px) {
+  .health-infos-wrapper {
+    height: 49px;
+    gap: 5px;
+    padding: 25px;
+
+    .health-infos-title-wrapper {
+      p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 0.75rem;
+      }
+    }
+  }
 }

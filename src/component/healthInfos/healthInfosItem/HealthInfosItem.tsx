@@ -4,10 +4,12 @@ import "./HealthInfosItem.scss";
 export type HealthInfosItemProps = {
   name: string;
   unit: string;
-  quantity: number;
+  quantity: number | string;
   color: string;
   Icon: JSX.Element;
 };
+
+// let nombreFormate = nombreAPI.toLocaleString("en-US");
 
 export const HealthInfosItem = ({
   name,

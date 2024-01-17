@@ -1,0 +1,13 @@
+@import "../../style/settings.scss";
+
+.performances-wrapper {
+  height: 263px;
+  background-color: $darkGrey;
+  grid-area: performances;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1300px) {
+  .performances-wrapper {
+    height: 220px;
+  }
+}

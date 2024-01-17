@@ -4,20 +4,24 @@ import {
   HealthInfosItemProps,
 } from "./healthInfosItem/HealthInfosItem";
 import { useHealthInfosDatas } from "../../hooks/useHealthInfosDatas";
-import { Energy } from "../../assets/Energy";
-import { Protein } from "../../assets/Protein";
-import { Carbohydrate } from "../../assets/Carbohydrate";
-import { Lipid } from "../../assets/Lipid";
+import { Energy } from "../../assets/health-svg/Energy";
+import { Protein } from "../../assets/health-svg/Protein";
+import { Carbohydrate } from "../../assets/health-svg/Carbohydrate";
+import { Lipid } from "../../assets/health-svg/Lipid";
 import "./HealthInfos.scss";
 
 export const HealthInfos = () => {
   const { healthInfos } = useHealthInfosDatas();
 
+  const formattedQuantity = (quantity: number) => {
+    return quantity.toLocaleString("en-US");
+  };
+
   const healthItems: HealthInfosItemProps[] = [
     {
       name: "Calories",
       unit: "Kcal",
-      quantity: healthInfos.macroCount.calorie,
+      quantity: formattedQuantity(healthInfos.macroCount.calorie),
       color: "red",
       Icon: <Energy />,
     },

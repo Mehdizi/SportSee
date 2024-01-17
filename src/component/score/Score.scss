@@ -1,0 +1,51 @@
+@import "../../style/settings.scss";
+
+.recharts-score-wrapper {
+  position: relative;
+  grid-area: score;
+  height: 263px;
+  display: flex;
+
+  background-color: $lightGrey;
+  border-radius: 10px;
+}
+
+.score-title {
+  position: absolute;
+  margin: 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.score-legend {
+  position: absolute;
+  bottom: 29%;
+  right: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 50%;
+  height: 53%;
+  width: 53%;
+  background-color: rgb(255, 255, 255);
+}
+
+.score-legend-percent {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.score-legend-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: grey;
+  line-height: 1.125rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .recharts-score-wrapper {
+    height: 220px;
+  }
+}
