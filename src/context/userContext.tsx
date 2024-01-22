@@ -8,6 +8,6 @@ export const UserContext = createContext<User>(null!);
 
 export const UserContextProvider = ({ children }: PropsWithChildren) => {
   return (
-    <UserContext.Provider value={{ id: 18 }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ id: 12 }}>{children}</UserContext.Provider>
   );
 };

@@ -1,7 +1,9 @@
 @import "../../style/settings.scss";
 
 .recharts-average-sessions {
-  height: 263px;
+  max-width: 258px;
+  max-height: 263px;
+  height: 100%;
   background-color: $red;
   grid-area: average;
   border-radius: 10px;

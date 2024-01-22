@@ -1,7 +1,14 @@
 import React from "react";
 import "./Score.scss";
 import { useScore } from "../../hooks/useScore";
-import { Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
+import {
+  Legend,
+  Pie,
+  PieChart,
+  RadialBar,
+  RadialBarChart,
+  ResponsiveContainer,
+} from "recharts";
 
 export const Score = () => {
   const { score } = useScore();

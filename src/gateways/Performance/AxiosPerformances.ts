@@ -8,7 +8,7 @@ export class AxiosPerformances implements UserPerformancesGateway {
     const performanceDatas = (await axios.get(`${baseUrl}/user/${id}/performance`)).data.data
     return {
       kind: performanceDatas.kind,
-      data: performanceDatas.date
+      data: performanceDatas.data
     }
   }
 }

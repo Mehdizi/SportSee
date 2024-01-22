@@ -1,5 +1,5 @@
 import React from "react";
-import { usePresentationDatas } from "../../../hooks/usePresentationDatas";
+import { usePresentationDatas } from "../../hooks/usePresentationDatas";
 import "./Presentation.scss";
 
 export const Presentation = () => {

@@ -4,17 +4,23 @@ body {
 
 .left-banner-main-wrapper {
   display: flex;
-  max-width: 1440px;
   margin: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .main-content-wrapper {
+  position: relative;
+  margin-left: 224px;
+  margin-top: 50px;
+  max-height: 779px;
+  height: 100%;
+  max-width: 1216px;
   width: 100%;
-  height: 779px;
-  margin: 70px;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(4, 25%);
   grid-template-areas:
     "title title title title"
     "activity activity activity health"
@@ -24,7 +30,10 @@ body {
 
 @media screen and (max-width: 1300px) {
   .main-content-wrapper {
-    margin: 30px;
+    margin-left: 150px;
+    margin-top: 0;
     grid-gap: 0 10px;
+    height: 650px;
+    width: 80%;
   }
 }

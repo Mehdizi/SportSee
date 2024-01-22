@@ -2,8 +2,6 @@ import React from "react";
 import "./AverageSessions.scss";
 import { useAverageSessionsDatas } from "../../hooks/useAverageSessionsDatas";
 import {
-  Area,
-  AreaChart,
   Legend,
   Line,
   LineChart,

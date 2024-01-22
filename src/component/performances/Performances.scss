@@ -1,7 +1,9 @@
 @import "../../style/settings.scss";
 
 .performances-wrapper {
-  height: 263px;
+  max-width: 258px;
+  max-height: 263px;
+  height: 100%;
   background-color: $darkGrey;
   grid-area: performances;
   border-radius: 10px;

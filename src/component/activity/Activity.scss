@@ -1,6 +1,9 @@
 @import "../../style/settings.scss";
 
 .recharts-activity {
+  max-width: 835px;
+  max-height: 280px;
+  height: 100%;
   grid-area: activity;
   background-color: $lightGrey;
   display: flex;
@@ -50,8 +53,8 @@
   background-color: $darkGrey;
 }
 
-// @media screen and (max-width: 1300px) {
-//   .recharts-activity {
-//     height: 220px;
-//   }
-// }
+@media screen and (max-width: 1300px) {
+  .recharts-activity {
+    height: 220px;
+  }
+}

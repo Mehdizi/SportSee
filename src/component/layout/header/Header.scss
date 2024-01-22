@@ -1,9 +1,11 @@
 .header {
-  max-width: 1440px;
+  position: relative;
+  z-index: 1;
   background-color: #020203;
   margin: auto;
   display: flex;
   justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.25);
   .header-logo {
     width: 178px;
     height: 61px;
@@ -23,6 +25,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      a {
+        text-decoration: none;
+        color: white;
+      }
       li {
         cursor: pointer;
       }
